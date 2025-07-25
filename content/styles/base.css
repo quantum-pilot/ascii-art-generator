@@ -1,0 +1,138 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#rusty-box {
+  display: grid;
+}
+
+#file-thingy {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+label[for="file-thingy"] {
+  cursor: pointer;
+}
+
+#art-box, #header-box div {
+  text-align: center;
+}
+
+#art-box, #header-box {
+  font-family: monospace, Courier;
+  line-height: 1;
+}
+
+#progress-box {
+  display: flex;
+  justify-content: center;
+}
+
+.outline.remove {
+  display: none;
+}
+
+.outline > #art-params {
+  display: grid;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.outline.show > #art-params {
+  opacity: 1;
+}
+
+#art-params > div {
+  text-align: center;
+}
+
+/* Slider inspired from https://codepen.io/seanstopnik/pen/CeLqA */
+
+.range-slider > .range {
+  -webkit-appearance: none;
+  width: calc(100% - (100px));
+  height: 10px;
+  border-radius: 5px;
+  background: #d7dcdf;
+  outline: none;
+}
+
+.range-slider > .value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #2c3e50;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+
+.range-slider > .value:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2c3e50;
+  border-bottom: 7px solid transparent;
+}
+
+/* Transition stuff */
+
+.divider {
+  display: block;
+  transition: all 0.5s;
+  background-color: black;
+  width: 1px;
+  height: 0;
+  position: relative;
+}
+
+.divider.hline {
+  height: 1px;
+  transition-delay: 0.5s;
+}
+
+.success-banner {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.success-banner > .divider {
+  left: 0;
+  width: 60px;
+}
+
+.success-banner > .divider > .hline {
+  width: 0;
+}
+
+.success-banner.show > .divider > .hline {
+  width: inherit;
+}
+
+.success-banner > .message {
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.success-banner.show > .message {
+  opacity: 1;
+}

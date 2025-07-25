@@ -1,0 +1,16 @@
+# Legacy python (will be removed)
+*.pyc
+# Cargo
+target/
+**/*.rs.bk
+Cargo.lock
+
+# wasm-pack
+pkg/
+wasm-pack.log
+# JS output
+.build/
+lib/
+# Node stuff
+node_modules/
+package-lock.json
