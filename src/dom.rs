@@ -315,19 +315,22 @@ impl DomAsciiArtInjector {
                         final_callback(draw).expect("final callback")
                     };
 
-                    outer_k
-                        .borrow_mut()
-                        .add(f, outer_d.update(|x| x + step_timeout_ms));
+                    outer_k.borrow_mut().add(f, {
+                        outer_d.update(|x| x + step_timeout_ms);
+                        outer_d.get()
+                    });
                 };
 
-                outer_k
-                    .borrow_mut()
-                    .add(f, outer_d.update(|x| x + step_timeout_ms));
+                outer_k.borrow_mut().add(f, {
+                    outer_d.update(|x| x + step_timeout_ms);
+                    outer_d.get()
+                });
             };
 
-            outer_k
-                .borrow_mut()
-                .add(f, outer_d.update(|x| x + step_timeout_ms));
+            outer_k.borrow_mut().add(f, {
+                outer_d.update(|x| x + step_timeout_ms);
+                outer_d.get()
+            });
         };
 
         keeper.borrow_mut().add(f, delay.get());

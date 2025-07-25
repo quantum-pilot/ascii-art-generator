@@ -1,5 +1,3 @@
-#![feature(cell_update, const_fn_floating_point_arithmetic)]
-
 use wasm_bindgen::prelude::*;
 
 use std::cell::Cell;

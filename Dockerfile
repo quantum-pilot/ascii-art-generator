@@ -1,4 +1,4 @@
-FROM quantumpilot/rust-wasm-builder:nightly as rust
+FROM quantumpilot/rust-wasm-builder:stable as rust
 COPY . /home/rust/src
 WORKDIR /home/rust/src
 RUN wasm-pack build
