@@ -1,6 +1,6 @@
 ## ascii-art-generator
 
-Generates ASCII arts from JPEG/PNG images. [Live demo](https://waffles.space/ascii-gen/).
+Generates ASCII arts from JPEG/PNG images. [Live demo](https://ascii.waffles.space).
 
 ### Usage
 
